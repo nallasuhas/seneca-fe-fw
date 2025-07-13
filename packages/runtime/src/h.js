@@ -7,7 +7,7 @@ export const DOM_TYPES = {
     ELEMENT: 'element',
     FRAGMENT: 'fragment'
 }
-// h function to create virtual nodes
+// h function to create virtual node for type: Element
 
 export function h(tag, props = {}, children = []){
     return {
@@ -17,11 +17,12 @@ export function h(tag, props = {}, children = []){
         type: DOM_TYPES.ELEMENT,
     }
 }
+// h function to create virtual node for type: Text
 
 export function hString(str){
     return {type: DOM_TYPES.TEXT, value: str}
 }
-
+// h function to create virtual node for type: Fragment
 export function hFragment(vNodes){
     return {
         type: DOM_TYPES.FRAGMENT,
