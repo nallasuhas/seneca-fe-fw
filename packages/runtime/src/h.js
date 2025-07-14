@@ -35,11 +35,4 @@ function mapTextNodes(children){
     typeof child === 'string' ? hString(child) : child)
 }
 
-const vDOM = h('form', {class: 'login-form', action: 'login'}, 
-    [
-        h('input', {type: 'text', name: 'user'}),
-        h('input', {type: 'password', name: 'pass'}),
-        h('button', {type: 'submit'}, ['Login']),
-    ]
-)
 
