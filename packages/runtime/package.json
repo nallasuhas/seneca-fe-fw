@@ -1,11 +1,11 @@
 {
   "name": "seneca-fe-fwk-runtime",
-  "version": "1.0.0",
-  "description": "A frontend framework to teach web developers how frontend frameworks work.",
+  "version": "1.0.1",
+  "description": "A minimal frontend framework from scratch.",
   "keywords": [
     "frontend",
     "framework",
-    "book",
+    "from scratch",
     "learning",
     "web",
     "development"

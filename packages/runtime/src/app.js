@@ -17,7 +17,7 @@ export function createApp({state, view, reducers = {}}){
         if(vdom){
             destroyDOM(vdom)
         }
-        vdom = view(state)
+        vdom = view(state, emit)
         mountDOM(vdom, parentEl)
     }
     const dispatcher = new Dispatcher()

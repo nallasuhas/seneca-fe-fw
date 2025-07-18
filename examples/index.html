@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="module"> 
+        import { createApp, h, hString, hFragment} from '../packages/runtime/dist/fe-fwk.js'
+        const state =  { count: 0}
+        const reducers = {
+            add: (state) => ({ count: state.count + 1 }),
+            sub: (state) => ({ count: state.count - 1 }),
+            reset: () => ({ count: 0 })
+        }
+
+        function view(state, emit){
+            return hFragment([
+                h('button', { on: {click: () => emit('sub')}}, ['-']),
+                h('span', {}, [hString(state.count)]),
+                h('button', { on: {click: () => emit('add')}}, ['+']),
+                h('button', { on: {click: () => emit('reset')}}, ['Reset'])
+            ])
+        }
+
+        createApp({state, reducers, view})
+        const app = createApp({state, reducers, view});
+        app.mount(document.body);
+    </script>
+    
 </head>
 <body>
+    <h1>counter</h1>
+
     
-    <script src="/packages/runtime/src/index.js"></script>
 </body>
 </html>
