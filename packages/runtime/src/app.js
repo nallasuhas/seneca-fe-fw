@@ -3,7 +3,7 @@ import { destroyDOM } from "./destroy-dom";
 import { Dispatcher } from "./dispatcher";
 // This is the assembler of state manager and render
 /* what createApp does:
---- subcribes renderApp/ renderer to afterhandlers via dispatcher instance, so that renderer exeecutes everytime when dispatch function is called. So when does dispatch is called? when an event is trigged!!
+--- subcribes renderApp/ renderer to afterhandlers via dispatcher instance, so that renderer exeecutes everytime when dispatch function is called. So when does dispatch called? when an event is trigged!!
 
 --- subscribes all the reducers functions via dispatcher.subscribe(commandName, handler)
  */
