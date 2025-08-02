@@ -1,4 +1,6 @@
-import { createApp, h, hFragment } from "https://unpkg.com/seneca-fe-fwk-runtime"
+import { createApp, h, hFragment } from "https://unpkg.com/seneca-fe-fwk-runtime@2.0.2/dist/fe-fwk.js"
+
+
 
 const state = {
     currentTodo : "",

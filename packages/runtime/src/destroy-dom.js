@@ -3,7 +3,7 @@ import { DOM_TYPES } from './h'
 
 function removeTextNode(vdom){
     const {el} = vdom;
-    el.remove
+    el.remove()
 }
 
 function removeElementNode(vdom){

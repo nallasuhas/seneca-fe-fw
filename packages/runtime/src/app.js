@@ -1,7 +1,7 @@
-import { mountDOM } from "./mount-dom";
-import { destroyDOM } from "./destroy-dom";
-import { Dispatcher } from "./dispatcher";
-import { patchDOM } from "./patch-dom";
+import { mountDOM } from "./mount-dom.js";
+import { destroyDOM } from "./destroy-dom.js";
+import { Dispatcher } from "./dispatcher.js";
+import { patchDOM } from "./patch-dom.js";
 // This is the assembler of state manager and render
 /* what createApp does:
 --- subcribes renderApp/ renderer to afterhandlers via dispatcher instance, so that renderer exeecutes everytime when dispatch function is called. So when does dispatch called? when an event is trigged!!
@@ -16,7 +16,7 @@ export function createApp({state, view, reducers = {}}){
     
     function renderApp(){
        const newvdom = view(state, emit)
-       vdom = patchDOM(newvdom, vdom, parentEl)
+       vdom = patchDOM( vdom,newvdom,  parentEl)
     }
     const dispatcher = new Dispatcher()
     const subscriptions  = [dispatcher.afterEveryCommand(renderApp)]

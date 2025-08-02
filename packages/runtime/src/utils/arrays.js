@@ -139,14 +139,14 @@ export function arraysDiffSequence(oldArray, newArray, equalsFn = (a, b) => (a==
 
     for(let i = 0; i < newArray.length; i++){
         //remove case 
-        if(array.isRemoval(i, oldArray[i])){
+        if(array.isRemoval(i, newArray)){
             sequence.push(array.removeItem(i))
             i--;
             continue;
         }
         // noop case
-        if (array.isNoop(index, newArray)) {       
-          sequence.push(array.noopItem(index))           
+        if (array.isNoop(i, newArray)) {       
+          sequence.push(array.noopItem(i))           
          continue 
         }
         // addition case
@@ -158,10 +158,10 @@ export function arraysDiffSequence(oldArray, newArray, equalsFn = (a, b) => (a==
         }
 
         // move case
-         sequence.push(array.moveItem(item, index))
+         sequence.push(array.moveItem(item, i))
     }
 
      sequence.push(...array.removeItemsAfter(newArray.length))
 
      return sequence
-}
+}  
